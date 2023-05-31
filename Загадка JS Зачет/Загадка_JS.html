@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Загадка</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            button {
+                display: block;
+                margin: 50px auto;
+                width: 300px;
+                height: 200px;
+                font: bold 24px Arial;
+                color: rgb(212, 9, 9);
+                background-color: rgb(165, 165, 165);
+                text-transform: uppercase;
+            }
+        </style>
+        
+        <script>
+            // +++++++++++++++++++++++++++++++ FIRST RIDDLE +++++++++++++++++++++++++++++++
+            function riddle_one() {
+                let prize = 23;
+                let count = 0;
+                for (;;) {
+                    count++;
+                    let variant = prompt('Привет холоп. Сколько лет правит Путин? \n(Ответ числом)');
+                    if (variant == 'хватит') return;
+                    variant = +variant;
+                    if (variant != variant) {
+                        alert('Это не число. Голову с плеч!');
+                        continue;
+                    }
+                    if (variant == prize) {
+                        alert ('Правильно! Начиная с 2000 года!')
+                        break;
+                    } else if (variant > prize) {
+                        alert('Перебор, попробуй еще раз');
+                    } else { (variant < prize)
+                        alert('Маловато будет, попробуй еще раз');
+                    }              
+                }
+                alert(`Вы угадали с ${count} попыток`);
+            }
+
+        </script>
+    </head>
+    
+    <body>
+        <button type="button" onclick="riddle_one();">Отгадай загадку</button>
+
+    </body>
+</html>
